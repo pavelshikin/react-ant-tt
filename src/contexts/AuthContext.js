@@ -38,10 +38,10 @@ const AuthProvider = ({ children }) => {
 
   const login = async data => {
     try {
-      const res = await api.post('users/me');
-      setUser(res.data);
       setCookie('Token', data.Authentication, { path: '/' });
       setCookie('Refresh', data.Refresh, { path: '/' });
+      const res = await api.post('users/me');
+      setUser(res.data);
     } catch (e) {
       removeUserAndTokens();
       console.log(e);
