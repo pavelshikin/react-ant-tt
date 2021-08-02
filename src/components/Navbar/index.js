@@ -8,7 +8,8 @@ import {
   LogoutOutlined,
   HomeOutlined,
   ShoppingCartOutlined,
-  ReadOutlined
+  ReadOutlined,
+  LoginOutlined
 } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import s from '../../styles/Navbar.module.scss';
@@ -19,7 +20,7 @@ const menuItems = [
   {
     text: 'Главная',
     href: '/',
-    icon: <HomeOutlined style={{ fontSize: 18 }} />
+    icon: <HomeOutlined style={{ fontSize: 20 }} />
   },
   // {
   //   text: 'Музыка',
@@ -29,17 +30,17 @@ const menuItems = [
   {
     text: 'Продукты',
     href: '/products',
-    icon: <ShoppingCartOutlined style={{ fontSize: 18 }} />
+    icon: <ShoppingCartOutlined style={{ fontSize: 20 }} />
   },
   {
     text: 'Заметки',
     href: '/notes',
-    icon: <ProfileOutlined style={{ fontSize: 18 }} />
+    icon: <ProfileOutlined style={{ fontSize: 20 }} />
   },
   {
     text: 'Фильмы/Книги',
     href: '/filmsandbooks',
-    icon: <ReadOutlined style={{ fontSize: 18 }} />
+    icon: <ReadOutlined style={{ fontSize: 20 }} />
   }
 ];
 
@@ -102,18 +103,30 @@ function NavBar() {
         onClose={onClose}
         visible={visible}
         bodyStyle={{ background: '#4d1f77', padding: '40px 0px 0' }}
+        width={200}
       >
         <Menu onClick={handleClick} selectedKeys={current} className={s.menu}>
-          {menuItems.map(({ text, href, icon }, index) => (
+          {user ? (
+            menuItems.map(({ text, href, icon }) => (
+              <Menu.Item
+                type="link"
+                key={href}
+                icon={icon}
+                className={s.menuItem}
+              >
+                <span style={{ color: '#fff' }}>{text}</span>
+              </Menu.Item>
+            ))
+          ) : (
             <Menu.Item
               type="link"
-              key={href}
-              icon={icon}
+              key={'/login'}
+              icon={<LoginOutlined style={{ fontSize: 20 }} />}
               className={s.menuItem}
             >
-              {text}
+              <span style={{ color: '#fff' }}>Вход</span>
             </Menu.Item>
-          ))}
+          )}
         </Menu>
       </Drawer>
     </>

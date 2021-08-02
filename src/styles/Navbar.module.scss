@@ -24,6 +24,10 @@
   }
 }
 
+.draw {
+  max-width: 100px;
+}
+
 .menu {
   padding: 0;
   background: transparent;
@@ -32,9 +36,8 @@
   .menuItem {
     background: transparent;
     color: $primary;
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0 10px;
+    font-size: 18px;
+    padding: 0 10px 0 15px;
     margin-bottom: 0 !important;
 
     &:hover {
