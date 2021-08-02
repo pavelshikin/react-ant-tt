@@ -16,7 +16,11 @@ import s from '../../styles/Navbar.module.scss';
 const { Header } = Layout;
 
 const menuItems = [
-  { text: 'Главная', href: '/', icon: <HomeOutlined /> },
+  {
+    text: 'Главная',
+    href: '/',
+    icon: <HomeOutlined style={{ fontSize: 18 }} />
+  },
   // {
   //   text: 'Музыка',
   //   href: '/tracks',
@@ -25,17 +29,17 @@ const menuItems = [
   {
     text: 'Продукты',
     href: '/products',
-    icon: <ShoppingCartOutlined color="primary" />
+    icon: <ShoppingCartOutlined style={{ fontSize: 18 }} />
   },
   {
     text: 'Заметки',
     href: '/notes',
-    icon: <ProfileOutlined color="primary" />
+    icon: <ProfileOutlined style={{ fontSize: 18 }} />
   },
   {
     text: 'Фильмы/Книги',
     href: '/filmsandbooks',
-    icon: <ReadOutlined color="primary" />
+    icon: <ReadOutlined style={{ fontSize: 18 }} />
   }
 ];
 
@@ -55,17 +59,10 @@ function NavBar() {
     setVisible(false);
   };
 
-  const redirect = href => {
-    setCurrent(href);
-    setVisible(false);
-    history.push(href);
-  };
-
   const handleClick = e => {
     setCurrent(e.key);
     setVisible(false);
     history.push(e.key);
-    // setTimeout(redirect, 10, e.key);
   };
 
   const exit = () => {
