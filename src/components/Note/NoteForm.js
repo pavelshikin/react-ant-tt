@@ -11,6 +11,7 @@ const { Panel } = Collapse;
 const NoteForm = ({ catId, catName }) => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [error, setError] = useState('');
   const dispatch = useDispatch();
 
   function callback(key) {
@@ -24,6 +25,10 @@ const NoteForm = ({ catId, catName }) => {
       categoryId: catId,
       categoryName: catName
     };
+    if (!data.title) {
+      setError('Заполните заголовок');
+      return;
+    }
     dispatch(createPost(data));
     setTitle('');
     setContent('');
@@ -31,13 +36,13 @@ const NoteForm = ({ catId, catName }) => {
 
   return (
     <div className={s.noteFormBox}>
-      <Collapse onChange={callback}>
+      <Collapse onChange={callback} style={{ border: 'none' }}>
         <Panel header="Добавить" className={s.panel}>
           <div className={s.noteForm}>
             <Input
               value={title}
               onChange={e => setTitle(e.target.value)}
-              label="Заголовок"
+              placeholder="Заголовок"
               type="text"
               style={{ marginTop: 10, background: '#fff', borderRadius: 5 }}
             />
@@ -48,6 +53,7 @@ const NoteForm = ({ catId, catName }) => {
               placeholder="Текст заметки"
               style={{ margin: '10px 0 10px', borderRadius: 5, padding: 10 }}
             />
+            <div className={'error'}>{error}</div>
             <Button style={{ marginTop: 'auto' }} onClick={addNote}>
               Добавить
             </Button>

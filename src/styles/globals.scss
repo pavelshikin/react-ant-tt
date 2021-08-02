@@ -20,6 +20,13 @@ body {
   padding-top: 60px;
 }
 
+.error {
+  margin: 10px 0;
+  color: $red;
+  font-size: 14px;
+  text-align: center;
+}
+
 h1 {
   font-size: 2em;
   font-weight: 600 !important;

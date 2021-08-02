@@ -19,11 +19,4 @@
   @include xs-block() {
     width: 90%;
   }
-
-  .error {
-    margin: 10px 0;
-    color: $red;
-    font-size: 14px;
-    text-align: center;
-  }
 }

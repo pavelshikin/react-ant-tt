@@ -68,7 +68,7 @@ function LoginPage() {
           label="Password"
           style={{ margin: '20px 0 10px' }}
         />
-        <div className={s.error}>{error}</div>
+        <div className={'error'}>{error}</div>
         <Button
           style={{ marginTop: 'auto', fontWeight: '500' }}
           onClick={signIn}
