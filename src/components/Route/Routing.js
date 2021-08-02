@@ -13,6 +13,14 @@ const Routing = () => {
       <PrivateRoute path="/notes" exact={true}>
         <NotesPage />
       </PrivateRoute>
+      {/* 
+      <PrivateRoute path="/products" exact={true}>
+        <ProductsPage />
+      </PrivateRoute>
+
+      <PrivateRoute path="/filmsandbooks" exact={true}>
+        <FilmsAndBooksPage />
+      </PrivateRoute> */}
 
       <PrivateRoute path="/" exact={true}>
         <div className={'container t-center'}>

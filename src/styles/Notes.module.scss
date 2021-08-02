@@ -32,7 +32,21 @@
   }
 }
 
-.noteForm {
-  display: flex;
-  flex-direction: column;
+.noteFormBox {
+  width: 100%;
+  max-width: 900;
+  margin: 5px auto 10px;
+  background: $bgMain;
+
+  .panel {
+    background: $bgMain;
+    border: none;
+    color: $primary;
+  }
+
+  .noteForm {
+    display: flex;
+    flex-direction: column;
+    background: $bgMain;
+  }
 }
