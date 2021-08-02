@@ -6,7 +6,7 @@ import {
   ProfileOutlined,
   MenuOutlined,
   LogoutOutlined,
-  HomeFilled,
+  HomeOutlined,
   ShoppingCartOutlined,
   ReadOutlined
 } from '@ant-design/icons';
@@ -14,6 +14,30 @@ import 'antd/dist/antd.css';
 import s from '../../styles/Navbar.module.scss';
 
 const { Header } = Layout;
+
+const menuItems = [
+  { text: 'Главная', href: '/', icon: <HomeOutlined /> },
+  // {
+  //   text: 'Музыка',
+  //   href: '/tracks',
+  //   icon: <MusicNoteRoundedIcon color="primary" />
+  // },
+  {
+    text: 'Продукты',
+    href: '/products',
+    icon: <ShoppingCartOutlined color="primary" />
+  },
+  {
+    text: 'Заметки',
+    href: '/notes',
+    icon: <ProfileOutlined color="primary" />
+  },
+  {
+    text: 'Фильмы/Книги',
+    href: '/filmsandbooks',
+    icon: <ReadOutlined color="primary" />
+  }
+];
 
 function NavBar() {
   const [visible, setVisible] = useState(false);
@@ -80,25 +104,19 @@ function NavBar() {
         closable={false}
         onClose={onClose}
         visible={visible}
-        bodyStyle={{ background: '#4d1f77' }}
+        bodyStyle={{ background: '#4d1f77', padding: '40px 0px 0' }}
       >
-        <Menu onClick={handleClick} selectedKeys={current}>
-          <Menu.Item type="link" key="/" icon={<HomeFilled />}>
-            Главная
-          </Menu.Item>
-          <Menu.Item type="link" key="/notes" icon={<ProfileOutlined />}>
-            Заметки
-          </Menu.Item>
-          <Menu.Item
-            type="link"
-            key="/products"
-            icon={<ShoppingCartOutlined />}
-          >
-            Продукты
-          </Menu.Item>
-          <Menu.Item type="link" key="/filmsandbooks" icon={<ReadOutlined />}>
-            Фильмы/Книги
-          </Menu.Item>
+        <Menu onClick={handleClick} selectedKeys={current} className={s.menu}>
+          {menuItems.map(({ text, href, icon }, index) => (
+            <Menu.Item
+              type="link"
+              key={href}
+              icon={icon}
+              className={s.menuItem}
+            >
+              {text}
+            </Menu.Item>
+          ))}
         </Menu>
       </Drawer>
     </>

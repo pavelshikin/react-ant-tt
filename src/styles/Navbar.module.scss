@@ -24,6 +24,24 @@
   }
 }
 
-.drawler {
-  background: $bgMain;
+.menu {
+  padding: 30px 10px;
+  background: transparent;
+  border-right: none;
+
+  .menuItem {
+    background: transparent;
+    color: $primary;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+.ant-menu-item-selected {
+  background: transparent;
 }
