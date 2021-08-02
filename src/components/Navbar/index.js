@@ -68,7 +68,7 @@ function NavBar() {
 
   const exit = () => {
     logout();
-    setSelectedIndex('/login');
+    setCurrent('/login');
     history.push('/login');
   };
 

@@ -4,7 +4,8 @@ import { useAuth } from '../contexts/AuthContext';
 import s from '../styles/Login.module.scss';
 import api from '../utilits/api';
 import { validateEmail } from '../utilits/validateEmail';
-import { Button, Input } from 'antd';
+import { Input } from 'antd';
+import { Btn } from '../theme';
 
 function LoginPage() {
   const { login, isAuth } = useAuth();
@@ -69,12 +70,9 @@ function LoginPage() {
           style={{ margin: '20px 0 10px' }}
         />
         <div className={'error'}>{error}</div>
-        <Button
-          style={{ marginTop: 'auto', fontWeight: '500' }}
-          onClick={signIn}
-        >
+        <Btn style={{ marginTop: 'auto' }} onClick={signIn}>
           Войти
-        </Button>
+        </Btn>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 $primary: #59e55d;
 $secondary: #59ffcf;
+$secHover: #23f5b9;
 
 $red: #ff4e35;
 $redHover: #ff290e;
@@ -15,6 +16,7 @@ $boxShadow: 0 0 4px 0 $shadow;
 :export {
   primary: $primary;
   secondary: $secondary;
+  secHover: $secHover;
 
   red: $red;
   redHover: $redHover;

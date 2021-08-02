@@ -4,6 +4,7 @@ import PrivateRoute from './PrivateRoute';
 import NotesPage from '../../pages/NotesPage';
 import LoginPage from '../../pages/LoginPage';
 import NotFoundPage from '../../pages/NotFoundPage';
+import FilmsAndBooksPage from '../../pages/FilmsAndBooksPage';
 
 const Routing = () => {
   return (
@@ -17,10 +18,11 @@ const Routing = () => {
       <PrivateRoute path="/products" exact={true}>
         <ProductsPage />
       </PrivateRoute>
+      */}
 
       <PrivateRoute path="/filmsandbooks" exact={true}>
         <FilmsAndBooksPage />
-      </PrivateRoute> */}
+      </PrivateRoute>
 
       <PrivateRoute path="/" exact={true}>
         <div className={'container t-center'}>
