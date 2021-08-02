@@ -11,3 +11,16 @@ $bgBody: #514f5d;
 
 $shadow: #1d1d1d;
 $boxShadow: 0 0 4px 0 $shadow;
+
+:export {
+  primary: $primary;
+  secondary: $secondary;
+
+  red: $red;
+  redHover: $redHover;
+
+  text: $text;
+
+  bgMain: $bgMain;
+  bgBody: $bgBody;
+}
