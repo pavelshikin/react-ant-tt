@@ -33,6 +33,7 @@ function LoginPage() {
       .then(res => {
         if (res.status === 200) {
           login(res.data);
+          setError('');
           return <Redirect push to="/notes" />;
         } else {
           setError('Ошибка');

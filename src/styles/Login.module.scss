@@ -1,5 +1,5 @@
 @import 'smart-grid';
-@import "../theme/palette.module";
+@import '../theme/palette.module';
 
 .box {
   width: 50%;
@@ -8,12 +8,16 @@
   margin: 5% auto 0;
   padding: 20px 30px 30px;
   background: $bgMain;
-  box-shadow: 0 0 4px 0 rgba(2, 2, 2, 1);
+  box-shadow: $boxShadow;
   display: flex;
   flex-direction: column;
 
-  @include sm-block(){
+  @include sm-block() {
     width: 80%;
+  }
+
+  @include xs-block() {
+    width: 90%;
   }
 
   .error {
