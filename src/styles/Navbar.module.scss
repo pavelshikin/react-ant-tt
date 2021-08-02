@@ -25,23 +25,23 @@
 }
 
 .menu {
-  padding: 30px 10px;
+  padding: 30px 0;
   background: transparent;
   border-right: none;
+
+  .ant-menu-item-selected {
+    background-color: green;
+  }
 
   .menuItem {
     background: transparent;
     color: $primary;
     font-size: 16px;
     font-weight: 500;
-    padding: 0;
+    padding: 0 10px;
 
     &:hover {
       color: $secondary;
     }
   }
-}
-
-.ant-menu-item-selected {
-  background: transparent;
 }
