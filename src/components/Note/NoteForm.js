@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import s from '../../styles/Notes.module.scss';
 import { Input } from 'antd';
 import { Btn } from '../../theme';
-import { Collapse, Collapse } from 'antd';
+import { Collapse } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { createPost } from '../../store/actions/postActions';
 import s from '../../styles/Notes.module.scss';
