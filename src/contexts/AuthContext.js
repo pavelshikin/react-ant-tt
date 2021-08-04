@@ -1,13 +1,14 @@
 import React, { useContext, createContext, useState, useEffect } from 'react';
 import api from '../utilits/api';
-import { useCookies } from 'react-cookie';
+import Cookies from 'js-cookie';
 
 export const authContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [cookies, setCookie, removeCookie] = useCookies(['Token', 'Refresh']);
   const isAuth = !!user;
+  const refersh = Cookies.get('Refresh');
+  console.log(refersh);
 
   useEffect(() => {
     const handle = setInterval(async () => {
@@ -19,7 +20,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    if (!isAuth && cookies.Refresh) {
+    if (!isAuth) {
       authenticateRefresh();
     }
     // eslint-disable-next-line
@@ -37,9 +38,10 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async data => {
+    Cookies.set('Token', data.Authentication, { path: '/' });
+    Cookies.set('Refresh', data.Refresh, { path: '/' });
+
     try {
-      setCookie('Token', data.Authentication, { path: '/' });
-      setCookie('Refresh', data.Refresh, { path: '/' });
       const res = await api.post('users/me');
       setUser(res.data);
     } catch (e) {
@@ -56,10 +58,11 @@ const AuthProvider = ({ children }) => {
     }
     removeUserAndTokens();
   };
+
   const removeUserAndTokens = () => {
     setUser(null);
-    removeCookie('Token');
-    removeCookie('Refresh');
+    Cookies.remove('Token');
+    Cookies.remove('Refresh');
   };
 
   return (

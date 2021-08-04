@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { Button, Drawer, Menu, Layout } from 'antd';
@@ -51,6 +51,10 @@ function NavBar() {
   const [current, setCurrent] = React.useState(
     String(history.location.pathname)
   );
+
+  useEffect(() => {
+    setCurrent(history.location.pathname);
+  }, [history.location.pathname]);
 
   const showDrawer = () => {
     setVisible(true);
