@@ -5,20 +5,22 @@ import Cookies from 'js-cookie';
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { isAuth } = useAuth();
-  const token = Cookies.get('Token')
+  const token = Cookies.get('Token');
 
   return (
     <Route
       {...rest}
-      render={({ location }) => 
-        isAuth || token
-        ? children
-        : <Redirect
+      render={({ location }) =>
+        isAuth || token ? (
+          children
+        ) : (
+          <Redirect
             to={{
-              pathname: "/login",
+              pathname: '/login',
               state: { from: location }
             }}
           />
+        )
       }
     />
   );
