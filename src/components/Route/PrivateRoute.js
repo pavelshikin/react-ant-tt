@@ -1,17 +1,17 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
-import { useCookies } from 'react-cookie'
+import Cookies from 'js-cookie';
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { isAuth } = useAuth();
-  const [cookies] = useCookies('Token')
+  const token = Cookies.get('Token')
 
   return (
     <Route
       {...rest}
       render={({ location }) => 
-        isAuth || cookies.Token
+        isAuth || token
         ? children
         : <Redirect
             to={{
