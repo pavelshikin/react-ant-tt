@@ -6,7 +6,6 @@ import { Btn } from '../../theme';
 import { Collapse } from 'antd';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import { createPost } from '../../store/actions/postActions';
-import s from '../../styles/Notes.module.scss';
 
 const { Panel } = Collapse;
 const { TextArea } = Input;
