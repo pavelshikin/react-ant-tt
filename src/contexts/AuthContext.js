@@ -8,7 +8,6 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const isAuth = !!user;
   const refersh = Cookies.get('Refresh');
-  console.log(refersh);
 
   useEffect(() => {
     const handle = setInterval(async () => {
@@ -20,7 +19,7 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   useEffect(() => {
-    if (!isAuth) {
+    if (!isAuth && refersh) {
       authenticateRefresh();
     }
     // eslint-disable-next-line
@@ -38,8 +37,14 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async data => {
-    Cookies.set('Token', data.Authentication, { path: '/' });
-    Cookies.set('Refresh', data.Refresh, { path: '/' });
+    Cookies.set('Token', data.Authentication, {
+      path: '/',
+      sameSite: 'strict'
+    });
+    Cookies.set('Refresh', data.Refresh, {
+      path: '/',
+      sameSite: 'strict'
+    });
 
     try {
       const res = await api.post('users/me');
