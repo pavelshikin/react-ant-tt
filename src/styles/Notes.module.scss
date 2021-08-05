@@ -25,6 +25,16 @@
         font-size: 1.05em;
       }
     }
+
+    .deleteBtn {
+      color: $red;
+      font-size: 14;
+      cursor: pointer;
+
+      &:hover {
+        color: $redHover;
+      }
+    }
   }
 
   .content {

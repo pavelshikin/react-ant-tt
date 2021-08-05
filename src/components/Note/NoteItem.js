@@ -16,9 +16,7 @@ const NoteItem = ({ note }) => {
       <div className={s.head}>
         <div className={s.title}>{note.title}</div>
         <div onClick={() => deleteNote(note._id)}>
-          <DeleteFilled
-            style={{ color: '#ff4e35', fontSize: 14, cursor: 'pointer' }}
-          />
+          <DeleteFilled className={s.deleteBtn} />
         </div>
       </div>
       {note.content ? <div className={s.content}>{note.content}</div> : null}

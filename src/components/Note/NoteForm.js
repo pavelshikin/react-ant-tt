@@ -56,7 +56,6 @@ const NoteForm = ({ catId, catName }) => {
               <TextArea
                 value={content}
                 onChange={e => setContent(e.target.value)}
-                minRows={5}
                 placeholder="Текст"
                 style={{ margin: '10px 0 10px', borderRadius: 5, padding: 10 }}
               />
