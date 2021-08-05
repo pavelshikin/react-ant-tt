@@ -115,35 +115,3 @@ h3 {
 .pt-3 {
   padding-top: 30px;
 }
-
-/**** Navbar ****/
-
-.ant-menu-item {
-  margin: 0 !important;
-}
-
-.ant-menu-item-selected {
-  background-color: #7b7b7b94 !important;
-
-  &:hover {
-    color: $primary;
-    background: #9c9c9c94 !important;
-  }
-}
-
-/**** NoteForm ****/
-
-.ant-collapse-header {
-  color: $primary !important;
-  display: flex;
-  align-items: center;
-}
-
-.ant-collapse-content {
-  border-top: none;
-}
-
-.ant-collapse-content-box {
-  padding: 0 16px 16px;
-  background: #4d1f77;
-}

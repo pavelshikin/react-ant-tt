@@ -1,4 +1,7 @@
 $primary: #59e55d;
+$primHover: #3ed643;
+$prim: #52b656;
+
 $secondary: #4bffcc;
 $secHover: #20d3a0;
 
@@ -15,6 +18,8 @@ $boxShadow: 0 0 4px 0 $shadow;
 
 :export {
   primary: $primary;
+  primHover: $primHover;
+  prim: $prim;
   secondary: $secondary;
   secHover: $secHover;
 

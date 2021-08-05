@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import './styles/globals.scss';
+import './styles/main.scss';
 import Layout from './components/Layout';
 import Routing from './components/Route/Routing';
 import Loader from './components/Loader';

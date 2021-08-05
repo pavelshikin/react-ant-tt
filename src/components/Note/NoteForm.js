@@ -48,17 +48,20 @@ const NoteForm = ({ catId, catName }) => {
             <Input
               value={title}
               onChange={e => setTitle(e.target.value)}
-              placeholder="Заголовок"
+              placeholder="Название"
               type="text"
               style={{ marginTop: 10, background: '#fff', borderRadius: 5 }}
             />
-            <TextArea
-              value={content}
-              onChange={e => setContent(e.target.value)}
-              minRows={5}
-              placeholder="Текст заметки"
-              style={{ margin: '10px 0 10px', borderRadius: 5, padding: 10 }}
-            />
+            {catName === 'books' || catName === 'films' ? null : (
+              <TextArea
+                value={content}
+                onChange={e => setContent(e.target.value)}
+                minRows={5}
+                placeholder="Текст"
+                style={{ margin: '10px 0 10px', borderRadius: 5, padding: 10 }}
+              />
+            )}
+
             <div className={'error'}>{error}</div>
             <Btn
               type="primary"

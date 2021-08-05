@@ -46,3 +46,16 @@
     }
   }
 }
+
+.ant-menu-item {
+  margin: 0 !important;
+}
+
+.ant-menu-item-selected {
+  background-color: #7b7b7b94 !important;
+
+  &:hover {
+    color: $primary;
+    background: #9c9c9c94 !important;
+  }
+}

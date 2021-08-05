@@ -54,3 +54,18 @@
     background: $bgMain;
   }
 }
+
+.ant-collapse-header {
+  color: $primary !important;
+  display: flex;
+  align-items: center;
+}
+
+.ant-collapse-content {
+  border-top: none;
+}
+
+.ant-collapse-content-box {
+  padding: 0 16px 16px;
+  background: #4d1f77;
+}
