@@ -40,13 +40,13 @@ const AuthProvider = ({ children }) => {
     const expires = new Date(Date.now() + 1 * 864e5).toUTCString();
 
     Cookies.set('Authentication', encodeURIComponent(data.Authentication), {
-      expires: expires,
+      expires: 8400,
       path: '/',
       sameSite: 'None',
       Secure: true
     });
     Cookies.set('Refresh', encodeURIComponent(data.Refresh), {
-      expires: expires,
+      expires: 8400,
       path: '/',
       sameSite: 'None',
       Secure: true
