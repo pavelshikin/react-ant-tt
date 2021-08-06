@@ -37,15 +37,13 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async data => {
-    Cookies.set('Token', data.Authentication, {
+    Cookies.set('Token', encodeURIComponent(data.Authentication), {
       path: '/',
-      domain: window.location.hostname,
       sameSite: 'None',
       Secure: true
     });
-    Cookies.set('Refresh', data.Refresh, {
+    Cookies.set('Refresh', encodeURIComponent(data.Refresh), {
       path: '/',
-      domain: window.location.hostname,
       sameSite: 'None',
       Secure: true
     });
