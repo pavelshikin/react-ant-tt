@@ -37,35 +37,20 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async data => {
-    const expires = new Date(Date.now() + 7 * 864e5).toUTCString();
-    document.cookie =
-      'Token' +
-      '=' +
-      encodeURIComponent(data.Authentication) +
-      '; expires=' +
-      expires +
-      '; path=/';
+    const expires = new Date(Date.now() + 1 * 864e5).toUTCString();
 
-    document.cookie =
-      'Refresh' +
-      '=' +
-      encodeURIComponent(data.Refresh) +
-      '; expires=' +
-      expires +
-      '; path=/';
-
-    // Cookies.set('Token', encodeURIComponent(data.Authentication), {
-    //   expires: expires,
-    //   path: '/',
-    //   sameSite: 'None',
-    //   Secure: true
-    // });
-    // Cookies.set('Refresh', encodeURIComponent(data.Refresh), {
-    //   expires: expires,
-    //   path: '/',
-    //   sameSite: 'None',
-    //   Secure: true
-    // });
+    Cookies.set('Authentication', encodeURIComponent(data.Authentication), {
+      expires: expires,
+      path: '/',
+      sameSite: 'None',
+      Secure: true
+    });
+    Cookies.set('Refresh', encodeURIComponent(data.Refresh), {
+      expires: expires,
+      path: '/',
+      sameSite: 'None',
+      Secure: true
+    });
 
     try {
       const res = await api.post('users/me');
@@ -87,7 +72,7 @@ const AuthProvider = ({ children }) => {
 
   const removeUserAndTokens = () => {
     setUser(null);
-    Cookies.remove('Token');
+    Cookies.remove('Authentication');
     Cookies.remove('Refresh');
   };
 
