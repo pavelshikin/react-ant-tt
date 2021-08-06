@@ -8,7 +8,7 @@ import NoteList from '../components/Note/NoteList';
 const ProductsPage = () => {
   const posts = useSelector(state => state.posts.posts);
   const dispatch = useDispatch();
-  let notes = postsByCategory(posts, 'products');
+  let products = postsByCategory(posts, 'products');
 
   useEffect(() => {
     dispatch(fetchPosts());
@@ -17,7 +17,7 @@ const ProductsPage = () => {
   return (
     <div className="container">
       <NoteForm catId={'60d788aee61f64154ce18551'} catName={'products'} />
-      <NoteList notes={notes} />
+      <NoteList notes={products} />
     </div>
   );
 };

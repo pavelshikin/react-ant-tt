@@ -1,0 +1,12 @@
+@import 'smart-grid';
+@import '../theme/palette.module';
+
+.items {
+  @include row-flex();
+  justify-content: space-around;
+
+  .item {
+    @include col();
+    @include size(4);
+  }
+}

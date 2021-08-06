@@ -6,6 +6,7 @@ import LoginPage from '../../pages/LoginPage';
 import NotFoundPage from '../../pages/NotFoundPage';
 import FilmsAndBooksPage from '../../pages/FilmsAndBooksPage';
 import ProductsPage from '../../pages/ProductsPage';
+import HomePage from '../../pages/HomePage';
 
 const Routing = () => {
   return (
@@ -25,9 +26,7 @@ const Routing = () => {
       </PrivateRoute>
 
       <PrivateRoute path="/" exact={true}>
-        <div className={'container t-center'}>
-          <h1>HomePage</h1>
-        </div>
+        <HomePage />
       </PrivateRoute>
 
       <Route path="*" component={NotFoundPage} />
