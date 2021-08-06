@@ -37,12 +37,23 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async data => {
-    Cookies.set('Token', encodeURIComponent(data.Authentication), {
+    const expires = new Date(Date.now() + days * 864e5).toUTCString();
+    document.cookie =
+      'Token2' +
+      '=' +
+      encodeURIComponent(data.Authentication) +
+      '; expires=' +
+      expires +
+      '; path=/';
+    
+      Cookies.set('Token', encodeURIComponent(data.Authentication), {
+      expires: 8400,
       path: '/',
       sameSite: 'None',
       Secure: true
     });
     Cookies.set('Refresh', encodeURIComponent(data.Refresh), {
+      expires: 8400,
       path: '/',
       sameSite: 'None',
       Secure: true
