@@ -13,7 +13,7 @@ function LoginPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  if (isAuth) return <Redirect push to="/notes" />;
+  if (isAuth) return <Redirect push to="/" />;
 
   const signIn = async () => {
     const data = {
@@ -35,7 +35,7 @@ function LoginPage() {
         if (res.status === 200) {
           login(res.data);
           setError('');
-          return <Redirect push to="/notes" />;
+          return <Redirect push to="/" />;
         } else {
           setError('Ошибка');
         }
