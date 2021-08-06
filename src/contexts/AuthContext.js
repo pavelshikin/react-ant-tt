@@ -39,11 +39,13 @@ const AuthProvider = ({ children }) => {
   const login = async data => {
     Cookies.set('Token', data.Authentication, {
       path: '/',
-      sameSite: 'strict'
+      sameSite: 'none',
+      void: 0
     });
     Cookies.set('Refresh', data.Refresh, {
       path: '/',
-      sameSite: 'strict'
+      sameSite: 'none',
+      void: 0
     });
 
     try {
