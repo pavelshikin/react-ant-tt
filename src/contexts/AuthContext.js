@@ -37,16 +37,15 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async data => {
-    const expires = new Date(Date.now() + 1 * 864e5).toUTCString();
-
     Cookies.set('Authentication', encodeURIComponent(data.Authentication), {
-      expires: 8400,
+      expires: 1,
       path: '/',
       sameSite: 'None',
       Secure: true
     });
+
     Cookies.set('Refresh', encodeURIComponent(data.Refresh), {
-      expires: 8400,
+      expires: 1,
       path: '/',
       sameSite: 'None',
       Secure: true

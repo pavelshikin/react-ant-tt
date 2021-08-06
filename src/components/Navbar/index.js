@@ -46,7 +46,7 @@ const menuItems = [
 
 function NavBar() {
   const [visible, setVisible] = useState(false);
-  const { user, logout } = useAuth();
+  const { user, isAuth, logout } = useAuth();
   const history = useHistory();
   const [current, setCurrent] = React.useState(
     String(history.location.pathname)
@@ -110,7 +110,7 @@ function NavBar() {
         width={200}
       >
         <Menu onClick={handleClick} selectedKeys={current} className={s.menu}>
-          {user ? (
+          {isAuth ? (
             menuItems.map(({ text, href, icon }) => (
               <Menu.Item
                 type="link"

@@ -70,7 +70,6 @@ function LoginPage() {
           style={{ margin: '20px 0 10px' }}
         />
         <div className={'error'}>{error}</div>
-        <div className={'error'}>{document.cookie}</div>
         <Btn style={{ marginTop: 'auto' }} onClick={signIn}>
           Войти
         </Btn>
