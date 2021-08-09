@@ -10,6 +10,4 @@ const api = axios.create({
   }
 });
 
-console.log(api.headers);
-
 export default api;
