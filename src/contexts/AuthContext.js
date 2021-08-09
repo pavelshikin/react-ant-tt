@@ -28,7 +28,9 @@ const AuthProvider = ({ children }) => {
   const authenticateRefresh = async () => {
     try {
       await api.get('auth/refresh');
-      const res = await api.post('users/me');
+      const res = await api.post('users/me', {
+        withCredentials: true
+      });
       setUser(res.data);
     } catch (e) {
       removeUserAndTokens();
@@ -52,7 +54,13 @@ const AuthProvider = ({ children }) => {
     });
 
     try {
-      const res = await api.post('users/me');
+      const res = await api.post(
+        'users/me',
+        {},
+        {
+          withCredentials: true
+        }
+      );
       setUser(res.data);
     } catch (e) {
       removeUserAndTokens();
