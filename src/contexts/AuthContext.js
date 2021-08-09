@@ -53,15 +53,6 @@ const AuthProvider = ({ children }) => {
       Secure: true
     });
 
-    Cookies.set('cook', 'val', {
-      expires: 1,
-      path: '/',
-      sameSite: 'None',
-      Secure: true
-    });
-
-    console.log(document.cookie);
-
     try {
       const res = await api.post(
         'users/me',
