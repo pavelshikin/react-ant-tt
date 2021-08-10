@@ -54,12 +54,14 @@ const AuthProvider = ({ children }) => {
     });
 
     try {
-      const res = await fetch('https://techno-train.herokuapp.com/users/me', {
-        method: 'post',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include'
-      });
-
+      const res = await api.post(
+        'users/me',
+        {},
+        {
+          withCredentials: true,
+          credentials: 'include'
+        }
+      );
       setUser(res.data);
     } catch (e) {
       removeUserAndTokens();
