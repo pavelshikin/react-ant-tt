@@ -4,11 +4,15 @@ import thunk from 'redux-thunk';
 import { rootReducer } from './reducers';
 
 const composeEnhancers =
-  (typeof window !== 'undefined' &&
-    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
-  compose;
+  typeof window === 'object' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+    ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+        // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+      })
+    : compose;
 
-export const store = createStore(
-  rootReducer,
+const enhancer = composeEnhancers(
   applyMiddleware(thunk)
+  // other store enhancers if any
 );
+
+export const store = createStore(rootReducer, enhancer);
