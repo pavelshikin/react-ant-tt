@@ -56,7 +56,8 @@ const AuthProvider = ({ children }) => {
     try {
       const res = await fetch('https://techno-train.herokuapp.com/users/me', {
         method: 'post',
-        headers: { 'Content-Type': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include'
       });
 
       setUser(res.data);
