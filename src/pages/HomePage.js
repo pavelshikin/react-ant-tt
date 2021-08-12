@@ -16,7 +16,7 @@ const HomePage = () => {
   const postsCategory = useSelector(state => state.posts.postsByCategory);
   const dispatch = useDispatch();
   const notes = postsByCategory(posts, 'notes');
-  const products = postsByCategory(posts, 'products');
+  // const products = postsByCategory(posts, 'products');
   const films = postsByCategory(posts, 'films');
   const books = postsByCategory(posts, 'books');
 

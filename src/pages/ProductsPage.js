@@ -6,7 +6,6 @@ import NoteList from '../components/Note/NoteList';
 
 const ProductsPage = () => {
   const posts = useSelector(state => state.posts.postsByCategory);
-  console.log(posts);
   const dispatch = useDispatch();
 
   useEffect(() => {
