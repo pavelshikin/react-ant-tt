@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPosts } from '../store/actions/postActions';
+import { fetchPosts, fetchPostsByCategory } from '../store/actions/postActions';
 import { postsByCategory } from '../utilits/postsByCategory';
 import { Badge } from 'antd';
 import {
@@ -13,6 +13,7 @@ import s from '../styles/Home.module.scss';
 
 const HomePage = () => {
   const posts = useSelector(state => state.posts.posts);
+  const postsCategory = useSelector(state => state.posts.postsByCategory);
   const dispatch = useDispatch();
   const notes = postsByCategory(posts, 'notes');
   const products = postsByCategory(posts, 'products');
@@ -27,7 +28,7 @@ const HomePage = () => {
       icon: <ProfileFilled style={{ fontSize: 58 }} />
     },
     {
-      count: products.length,
+      count: postsCategory.length,
       text: 'Продукты',
       href: '/products',
       icon: <ShoppingFilled style={{ fontSize: 58 }} />
@@ -42,6 +43,7 @@ const HomePage = () => {
 
   useEffect(() => {
     dispatch(fetchPosts());
+    dispatch(fetchPostsByCategory('60d788aee61f64154ce18551'));
   }, [dispatch]);
 
   return (
