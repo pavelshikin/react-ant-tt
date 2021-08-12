@@ -9,3 +9,11 @@ export const postsByCategory = (posts, value) => {
   );
   return postsArray;
 };
+
+export const postsByCategoryId = (posts, id) => {
+  let postsArray = [];
+
+  postsArray = posts.filter(post => post.category[0] === id);
+
+  return postsArray;
+};

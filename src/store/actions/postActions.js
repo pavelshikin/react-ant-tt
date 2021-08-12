@@ -26,6 +26,31 @@ export const fetchPosts = () => {
   };
 };
 
+export const fetchAllPosts = () => {
+  return async dispatch => {
+    dispatch(showLoader());
+
+    await api
+      .get(`/posts`)
+      .then(res => {
+        console.log(res.data);
+        dispatch({
+          type: postTypes.FETCH_ALL_POSTS_SUCCESS,
+          payload: res.data
+        });
+      })
+      .catch(function(error) {
+        dispatch({
+          type: postTypes.FETCH_ALL_POSTS_ERROR,
+          payload: 'Ошибка загрузки постов'
+        });
+        console.log(error);
+      });
+
+    dispatch(hideLoader());
+  };
+};
+
 export const fetchPostsByCategory = id => {
   return async dispatch => {
     dispatch(showLoader());

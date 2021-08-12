@@ -2,6 +2,7 @@ import { postTypes } from '../types';
 
 const initialState = {
   posts: [],
+  allPosts: [],
   error: '',
   postsByCategory: []
 };
@@ -11,10 +12,13 @@ export const postReducer = (state = initialState, action) => {
     case postTypes.FETCH_POSTS_ERROR ||
       postTypes.FETCH_POSTS_BY_CATEGORY_ERROR ||
       postTypes.DELETE_POST_ERROR ||
+      postTypes.FETCH_ALL_POSTS_ERROR ||
       postTypes.CREATE_POST_ERROR:
       return { ...state, error: action.payload };
     case postTypes.FETCH_POSTS_SUCCESS:
       return { ...state, error: '', posts: action.payload };
+    case postTypes.FETCH_ALL_POSTS_SUCCESS:
+      return { ...state, error: '', allPosts: action.payload };
     case postTypes.FETCH_POSTS_BY_CATEGORY_SUCCESS:
       return { ...state, error: '', postsByCategory: action.payload };
     case postTypes.CREATE_POST_SUCCESS:
