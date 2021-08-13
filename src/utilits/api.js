@@ -14,8 +14,10 @@ const api = axios.create({
 api.interceptors.request.use(
   config => {
     const token = Cookies.get('Authentication');
+    const refresh = Cookies.get('Refresh');
     const auth = token ? `Bearer ${token}` : '';
     config.headers.common['Authorization'] = auth;
+    config.headers.common['Refresh'] = refresh;
     return config;
   },
   error => Promise.reject(error)
