@@ -41,14 +41,16 @@ const AuthProvider = ({ children }) => {
       expires: 1,
       path: '/',
       sameSite: 'None',
-      Secure: true
+      Secure: true,
+      HttpOnly: true
     });
 
     Cookies.set('Refresh', encodeURIComponent(data.Refresh), {
       expires: 1,
       path: '/',
       sameSite: 'None',
-      Secure: true
+      Secure: true,
+      HttpOnly: true
     });
 
     try {
