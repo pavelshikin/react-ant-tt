@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Redirect, useLocation } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { useAuth } from '../contexts/AuthContext';
+import { showLoader, hideLoader } from '../store/actions';
 import s from '../styles/Login.module.scss';
 import api from '../utilits/api';
 import { validateEmail } from '../utilits/validateEmail';
@@ -12,6 +14,7 @@ function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const dispatch = useDispatch();
   let location = useLocation();
 
   let { from } = location.state || { from: { pathname: '/' } };
@@ -19,6 +22,7 @@ function LoginPage() {
   if (isAuth) return <Redirect push to={from.pathname} />;
 
   const signIn = async () => {
+    dispatch(showLoader());
     const data = {
       email,
       password
@@ -53,6 +57,7 @@ function LoginPage() {
       .finally(() => {});
     setEmail('');
     setPassword('');
+    dispatch(hideLoader());
   };
 
   return (

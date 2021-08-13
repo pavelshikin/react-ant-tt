@@ -1,8 +1,7 @@
-
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useAuth } from '../contexts/AuthContext';
-import { fetchPosts, fetchPostsByCategory } from '../store/actions/postActions';
+import { fetchPosts, fetchPostsByCategory } from '../store/actions';
 import { postsByCategory } from '../utilits/postsByCategory';
 import NoteForm from '../components/Note/NoteForm';
 import NoteList from '../components/Note/NoteList';

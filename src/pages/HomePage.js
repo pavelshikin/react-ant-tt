@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchPosts, fetchPostsByCategory } from '../store/actions/postActions';
+import { fetchPosts, fetchPostsByCategory } from '../store/actions';
 import { postsByCategory } from '../utilits/postsByCategory';
 import { Badge } from 'antd';
 import {

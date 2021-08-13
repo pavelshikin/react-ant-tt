@@ -6,9 +6,9 @@ import NoteList from '../components/Note/NoteList';
 import NoteForm from '../components/Note/NoteForm';
 import s from '../styles/Films.module.scss';
 import { VideoCameraOutlined, ReadOutlined } from '@ant-design/icons';
+import { fetchPosts } from '../store/actions';
 
 const { TabPane } = Tabs;
-import { fetchPosts } from '../store/actions/postActions';
 
 const FilmsAndBooksPage = () => {
   const posts = useSelector(state => state.posts.posts);

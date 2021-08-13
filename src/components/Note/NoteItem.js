@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import s from '../../styles/Notes.module.scss';
-import { removePost } from '../../store/actions/postActions';
+import { removePost } from '../../store/actions';
 import { DeleteFilled } from '@ant-design/icons';
 
 const NoteItem = ({ note }) => {

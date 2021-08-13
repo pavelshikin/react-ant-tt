@@ -1,6 +1,6 @@
 import api from '../../utilits/api';
 import { postTypes } from '../types';
-import { showLoader, hideLoader } from './index';
+import { showLoader, hideLoader } from './';
 
 export const fetchPosts = () => {
   return async dispatch => {
