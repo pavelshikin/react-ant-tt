@@ -13,7 +13,7 @@ export const fetchPosts = () => {
           type: postTypes.FETCH_POSTS_SUCCESS,
           payload: res.data
         });
-        dispatch(showError('jjj'));
+        
       })
       .catch(function(error) {
         dispatch({
@@ -22,7 +22,7 @@ export const fetchPosts = () => {
         });
         console.log(error);
       });
-
+      dispatch(showError('jjj'));
     dispatch(hideLoader());
   };
 };

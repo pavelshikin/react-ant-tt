@@ -10,13 +10,15 @@ const ModalError = ({ text }) => {
     dispatch(hideError());
   };
 
-  return (
-    <>
-      <Modal title="Ошибка" visible={true} onCancel={close}>
-        <p>{text}</p>
-      </Modal>
-    </>
-  );
+  function error() {
+    Modal.error({
+      title: 'Ошибка',
+      content: text,
+      afterClose: close()
+    });
+  }
+
+  return <>{error()}</>;
 };
 
 export default ModalError;
