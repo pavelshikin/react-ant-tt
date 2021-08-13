@@ -5,7 +5,7 @@ import './styles/main.scss';
 import Layout from './components/Layout';
 import Routing from './components/Route/Routing';
 import Loader from './components/Loader';
-import Modal from './components/Modal';
+import ModalError from './components/Modal';
 
 const App = () => {
   const loading = useSelector(state => state.app.loading);
@@ -16,7 +16,7 @@ const App = () => {
     <Router>
       <Layout>
         {loading ? <Loader /> : null}
-        {error ? <Modal text={error} /> : null}
+        {error ? <ModalError text={error} /> : null}
         <Routing />
       </Layout>
     </Router>

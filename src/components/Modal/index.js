@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import {hideError} from '../../store/actions';
+import { hideError } from '../../store/actions';
 import { Modal } from 'antd';
 
-const Modal = ({ text }) => {
+const ModalError = ({ text }) => {
   const dispatch = useDispatch();
 
   const close = () => {
@@ -19,4 +19,4 @@ const Modal = ({ text }) => {
   );
 };
 
-export default Modal;
+export default ModalError;

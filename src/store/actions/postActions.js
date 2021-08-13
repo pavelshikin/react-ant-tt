@@ -1,5 +1,5 @@
 import api from '../../utilits/api';
-import { postTypes, appTypes } from '../types';
+import { postTypes } from '../types';
 import { showLoader, hideLoader, showError } from './';
 
 export const fetchPosts = () => {
