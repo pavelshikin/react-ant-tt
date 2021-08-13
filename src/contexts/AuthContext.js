@@ -37,17 +37,18 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async data => {
-    Cookies.set('Authentication', encodeURIComponent(data.Authentication), {
-      expires: 1,
-      path: '/',
-      sameSite: 'Lax'
-    });
+    console.log(document.Cookie);
+    // Cookies.set('Authentication', encodeURIComponent(data.Authentication), {
+    //   expires: 1,
+    //   path: '/',
+    //   sameSite: 'Lax'
+    // });
 
-    Cookies.set('Refresh', encodeURIComponent(data.Refresh), {
-      expires: 1,
-      path: '/',
-      sameSite: 'Lax'
-    });
+    // Cookies.set('Refresh', encodeURIComponent(data.Refresh), {
+    //   expires: 1,
+    //   path: '/',
+    //   sameSite: 'Lax'
+    // });
 
     try {
       const res = await api.post(
