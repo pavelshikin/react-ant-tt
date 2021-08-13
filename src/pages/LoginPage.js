@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import s from '../styles/Login.module.scss';
 import api from '../utilits/api';
@@ -12,8 +12,11 @@ function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  let location = useLocation();
 
-  if (isAuth) return <Redirect push to="/" />;
+  let { from } = location.state || { from: { pathname: '/' } };
+
+  if (isAuth) return <Redirect push to={from.pathname} />;
 
   const signIn = async () => {
     const data = {
@@ -69,7 +72,6 @@ function LoginPage() {
           label="Password"
           style={{ margin: '20px 0 10px' }}
         />
-        <div className={'error'}>{document.cookie}</div>
         <div className={'error'}>{error}</div>
         <Btn style={{ marginTop: 'auto' }} onClick={signIn}>
           Войти

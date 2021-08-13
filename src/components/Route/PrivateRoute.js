@@ -5,17 +5,12 @@ import Cookies from 'js-cookie';
 
 const PrivateRoute = ({ children, ...rest }) => {
   const { isAuth } = useAuth();
-  const token = Cookies.get('Authentication');
-
-  useEffect(() => {
-    if (!isAuth) return <Redirect push to={'/login'} />;
-  }, [isAuth]);
 
   return (
     <Route
       {...rest}
       render={({ location }) =>
-        isAuth || token ? (
+        isAuth ? (
           children
         ) : (
           <Redirect
