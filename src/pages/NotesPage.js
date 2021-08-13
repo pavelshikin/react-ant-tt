@@ -7,18 +7,20 @@ import NoteForm from '../components/Note/NoteForm';
 import NoteList from '../components/Note/NoteList';
 
 const NotesPage = () => {
-  const { user } = useAuth();
+  const { user, authenticateRefresh } = useAuth();
   const posts = useSelector(state => state.posts.posts);
   const allPosts = useSelector(state => state.posts.postsByCategory);
   const dispatch = useDispatch();
   let notes = postsByCategory(posts, 'notes');
 
   useEffect(() => {
-    if (user.roles.indexOf('OWNER' || 'ADMIN') != -1) {
+    if (user && user.roles.indexOf('OWNER' || 'ADMIN') != -1) {
       dispatch(fetchPostsByCategory('60d732d173ec823842af9ad2'));
+    } else {
+      authenticateRefresh();
     }
     dispatch(fetchPosts());
-  }, [dispatch]);
+  }, [dispatch, user]);
 
   return (
     <div className="container">

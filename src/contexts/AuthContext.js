@@ -28,9 +28,7 @@ const AuthProvider = ({ children }) => {
   const authenticateRefresh = async () => {
     try {
       await api.get('auth/refresh');
-      const res = await api.post('users/me', {
-        withCredentials: true
-      });
+      const res = await api.post('users/me');
       setUser(res.data);
     } catch (e) {
       removeUserAndTokens();
@@ -85,7 +83,9 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <authContext.Provider value={{ isAuth, login, logout, user }}>
+    <authContext.Provider
+      value={{ isAuth, login, logout, user, authenticateRefresh }}
+    >
       {children}
     </authContext.Provider>
   );
