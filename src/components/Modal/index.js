@@ -7,14 +7,18 @@ const ModalError = ({ text }) => {
   const dispatch = useDispatch();
 
   const close = () => {
+    console.log('OK');
     dispatch(hideError());
   };
 
   function error() {
-    Modal.error({
+    Modal.confirm({
       title: 'Ошибка',
       content: text,
-      afterClose: close()
+      onOk() {
+        console.log('OK');
+      },
+      afterClose(){close()} 
     });
   }
 

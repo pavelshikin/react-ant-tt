@@ -20,6 +20,7 @@ export const showError = text => {
 };
 
 export const hideError = () => {
+  console.log('hise');
   return {
     type: appTypes.HIDE_ERROR
   };

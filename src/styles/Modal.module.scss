@@ -1,0 +1,24 @@
+@import '../theme/palette.module';
+.ant-modal-content {
+  background: $bgMain;
+
+  .ant-modal-confirm-title {
+    color: $secondary;
+  }
+
+  .ant-modal-confirm-content {
+    color: $text;
+  }
+}
+
+.ant-btn-primary {
+  background: $secondary !important;
+  border-color: $secondary !important;
+  color: $bgMain !important;
+  font-weight: 500;
+}
+
+.ant-btn:hover {
+  background: $secHover !important;
+  border-color: $secHover !important;
+}
