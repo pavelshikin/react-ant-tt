@@ -10,7 +10,6 @@ import ModalError from './components/Modal';
 const App = () => {
   const loading = useSelector(state => state.app.loading);
   const error = useSelector(state => state.app.error);
-  console.log(error);
 
   return (
     <Router>

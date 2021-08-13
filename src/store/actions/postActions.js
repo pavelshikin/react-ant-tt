@@ -7,22 +7,22 @@ export const fetchPosts = () => {
     dispatch(showLoader());
 
     await api
-      .get(`/posts/me`)
+      .get(`/posts/mee`)
       .then(res => {
         dispatch({
           type: postTypes.FETCH_POSTS_SUCCESS,
           payload: res.data
         });
-        
       })
       .catch(function(error) {
         dispatch({
           type: postTypes.FETCH_POSTS_ERROR,
           payload: 'Ошибка загрузки постов'
         });
+        dispatch(showError('Ошибка загрузки постов'));
         console.log(error);
       });
-      dispatch(showError('jjj'));
+
     dispatch(hideLoader());
   };
 };

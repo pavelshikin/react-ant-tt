@@ -12,13 +12,12 @@ const ModalError = ({ text }) => {
   };
 
   function error() {
-    Modal.confirm({
+    Modal.error({
       title: 'Ошибка',
       content: text,
       onOk() {
-        console.log('OK');
-      },
-      afterClose(){close()} 
+        close();
+      }
     });
   }
 
