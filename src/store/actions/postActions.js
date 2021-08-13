@@ -1,6 +1,6 @@
 import api from '../../utilits/api';
-import { postTypes } from '../types';
-import { showLoader, hideLoader } from './';
+import { postTypes, appTypes } from '../types';
+import { showLoader, hideLoader, showError } from './';
 
 export const fetchPosts = () => {
   return async dispatch => {
@@ -13,6 +13,7 @@ export const fetchPosts = () => {
           type: postTypes.FETCH_POSTS_SUCCESS,
           payload: res.data
         });
+        dispatch(showError('jjj'));
       })
       .catch(function(error) {
         dispatch({

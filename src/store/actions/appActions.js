@@ -11,3 +11,16 @@ export const hideLoader = () => {
     type: appTypes.HIDE_LOADER
   };
 };
+
+export const showError = text => {
+  return {
+    type: appTypes.SHOW_ERROR,
+    payload: text
+  };
+};
+
+export const hideError = () => {
+  return {
+    type: appTypes.HIDE_ERROR
+  };
+};

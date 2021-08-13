@@ -1,6 +1,9 @@
 export const appTypes = {
   SHOW_LOADER: 'SHOW_LOADER',
-  HIDE_LOADER: 'HIDE_LOADER'
+  HIDE_LOADER: 'HIDE_LOADER',
+
+  SHOW_ERROR: 'SHOW_ERROR',
+  HIDE_ERROR: 'HIDE_ERROR'
 };
 
 export const postTypes = {

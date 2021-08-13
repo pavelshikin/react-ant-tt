@@ -1,11 +1,8 @@
 import { appTypes } from '../types';
 
 const initialState = {
-  auth: {
-    user: null,
-    isAuth: false
-  },
-  loading: false
+  loading: false,
+  error: ''
 };
 
 export const appReducer = (state = initialState, action) => {
@@ -14,6 +11,10 @@ export const appReducer = (state = initialState, action) => {
       return { ...state, loading: true };
     case appTypes.HIDE_LOADER:
       return { ...state, loading: false };
+    case appTypes.SHOW_ERROR:
+      return { ...state, error: action.payload };
+    case appTypes.HIDE_ERROR:
+      return { ...state, error: '' };
     default:
       return state;
   }
