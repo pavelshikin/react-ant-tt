@@ -1,17 +1,24 @@
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-const token = Cookies.get('Authentication');
-
 const api = axios.create({
   baseURL: 'https://techno-train.herokuapp.com/',
   withCredentials: true,
   credentials: 'include',
   headers: {
     'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${token}`
+    'Content-Type': 'application/json'
   }
 });
+
+api.interceptors.request.use(
+  config => {
+    const token = Cookies.get('Authentication');
+    const auth = token ? `Bearer ${token}` : '';
+    config.headers.common['Authorization'] = auth;
+    return config;
+  },
+  error => Promise.reject(error)
+);
 
 export default api;
