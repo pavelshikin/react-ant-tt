@@ -40,17 +40,13 @@ const AuthProvider = ({ children }) => {
     Cookies.set('Authentication', encodeURIComponent(data.Authentication), {
       expires: 1,
       path: '/',
-      sameSite: 'None',
-      Secure: true,
-      HttpOnly: true
+      sameSite: 'Lax'
     });
 
     Cookies.set('Refresh', encodeURIComponent(data.Refresh), {
       expires: 1,
       path: '/',
-      sameSite: 'None',
-      Secure: true,
-      HttpOnly: true
+      sameSite: 'Lax'
     });
 
     try {
