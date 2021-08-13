@@ -1,4 +1,7 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
+
+const token = Cookies.get('Authentication');
 
 const api = axios.create({
   baseURL: 'https://techno-train.herokuapp.com/',
@@ -7,7 +10,7 @@ const api = axios.create({
   headers: {
     'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/json',
-    dfd: '111'
+    Authorization: `Bearer ${token}`
   }
 });
 
