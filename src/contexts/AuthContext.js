@@ -37,7 +37,6 @@ const AuthProvider = ({ children }) => {
   };
 
   const login = async data => {
-    
     Cookies.set('Authentication', encodeURIComponent(data.Authentication), {
       expires: 1,
       path: '/',
@@ -51,7 +50,7 @@ const AuthProvider = ({ children }) => {
       sameSite: 'None',
       Secure: true
     });
-    
+
     console.log(document.Cookie);
 
     try {

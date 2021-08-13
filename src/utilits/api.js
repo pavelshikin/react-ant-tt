@@ -6,7 +6,8 @@ const api = axios.create({
   credentials: 'include',
   headers: {
     'Access-Control-Allow-Origin': '*',
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'dfd': '111'
   }
 });
 
