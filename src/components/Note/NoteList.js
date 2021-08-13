@@ -21,7 +21,7 @@ const NoteList = ({ notes, allPosts, checkBox }) => {
 
   return (
     <div className={s.content}>
-      {user.roles.indexOf('OWNER' || 'ADMIN') !== -1 && checkBox ? (
+      {user && user.roles.indexOf('OWNER' || 'ADMIN') !== -1 && checkBox ? (
         <div style={{ overflow: 'auto' }}>
           <Checkbox onChange={onChange} checked={check} className={s.checkBox}>
             Все
