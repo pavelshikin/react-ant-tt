@@ -15,7 +15,7 @@ const App = () => {
     <Router>
       <Layout>
         {loading ? <Loader /> : null}
-        {error ? <ModalError text={error} /> : null}
+        {error  ? <ModalError text={error} /> : null}
         <Routing />
       </Layout>
     </Router>
