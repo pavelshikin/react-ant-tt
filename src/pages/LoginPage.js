@@ -22,7 +22,6 @@ function LoginPage() {
   if (isAuth) return <Redirect push to={from.pathname} />;
 
   const signIn = async () => {
-    dispatch(showLoader());
     const data = {
       email,
       password
@@ -35,6 +34,8 @@ function LoginPage() {
       setError('Введите валидный email');
       return;
     }
+
+    dispatch(showLoader());
 
     await api
       .post('auth/login', data)
@@ -53,8 +54,7 @@ function LoginPage() {
         } else {
           setError('Ошибка на сервере');
         }
-      })
-      .finally(() => {});
+      });
     setEmail('');
     setPassword('');
     dispatch(hideLoader());
