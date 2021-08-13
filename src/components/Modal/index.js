@@ -7,7 +7,6 @@ const ModalError = ({ text }) => {
   const dispatch = useDispatch();
 
   const close = () => {
-    console.log('OK');
     dispatch(hideError());
   };
 
