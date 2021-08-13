@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { useAuth } from '../contexts/AuthContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { postsByCategory } from '../utilits/postsByCategory';
 import { Tabs } from 'antd';
@@ -11,7 +12,9 @@ const { TabPane } = Tabs;
 import { fetchPosts } from '../store/actions/postActions';
 
 const FilmsAndBooksPage = () => {
+  const { user } = useAuth();
   const posts = useSelector(state => state.posts.posts);
+  const allFilms = useSelector(state => state.posts.postsByCategory);
   const films = postsByCategory(posts, 'films');
   const books = postsByCategory(posts, 'books');
   const dispatch = useDispatch();

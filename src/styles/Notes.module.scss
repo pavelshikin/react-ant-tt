@@ -4,6 +4,12 @@
 .content {
   max-width: 900px;
   margin: 0 auto;
+
+  .checkBox {
+    color: $primary;
+    float: right;
+    margin: 0 10px 8px 0;
+  }
 }
 
 .note {

@@ -22,7 +22,8 @@ export const postReducer = (state = initialState, action) => {
       return {
         ...state,
         error: '',
-        posts: [...state.posts, action.payload]
+        posts: [...state.posts, action.payload],
+        postsByCategory: [...state.postsByCategory, action.payload]
       };
     case postTypes.CREATE_POST_CAT_SUCCESS:
       return {

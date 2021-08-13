@@ -46,7 +46,7 @@ export const fetchPostsByCategory = id => {
           });
         } else {
           dispatch({
-            type: postTypes.CREATE_POST_ERROR,
+            type: postTypes.FETCH_POSTS_BY_CATEGORY_ERROR,
             payload: 'Ошибка сервера'
           });
           console.log(error);
@@ -77,14 +77,6 @@ export const createPost = post => {
             }
           ]
         };
-
-        if (categoryName === 'products') {
-          dispatch({
-            type: postTypes.CREATE_POST_CAT_SUCCESS,
-            payload: newPost
-          });
-        }
-
         dispatch({
           type: postTypes.CREATE_POST_SUCCESS,
           payload: newPost

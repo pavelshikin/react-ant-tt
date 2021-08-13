@@ -13,10 +13,9 @@ import s from '../styles/Home.module.scss';
 
 const HomePage = () => {
   const posts = useSelector(state => state.posts.posts);
-  const postsCategory = useSelector(state => state.posts.postsByCategory);
   const dispatch = useDispatch();
   const notes = postsByCategory(posts, 'notes');
-  // const products = postsByCategory(posts, 'products');
+  const products = postsByCategory(posts, 'products');
   const films = postsByCategory(posts, 'films');
   const books = postsByCategory(posts, 'books');
 
@@ -28,7 +27,7 @@ const HomePage = () => {
       icon: <ProfileFilled style={{ fontSize: 58 }} />
     },
     {
-      count: postsCategory.length,
+      count: products.length,
       text: 'Продукты',
       href: '/products',
       icon: <ShoppingFilled style={{ fontSize: 58 }} />
