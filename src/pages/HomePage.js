@@ -28,7 +28,7 @@ const HomePage = () => {
     },
     {
       count: products.length,
-      text: 'Продукты',
+      text: 'Покупки',
       href: '/products',
       icon: <ShoppingFilled style={{ fontSize: 58 }} />
     },

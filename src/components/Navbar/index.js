@@ -28,7 +28,7 @@ const menuItems = [
   //   icon: <MusicNoteRoundedIcon color="primary" />
   // },
   {
-    text: 'Продукты',
+    text: 'Покупки',
     href: '/products',
     icon: <ShoppingCartOutlined style={{ fontSize: 20 }} />
   },
