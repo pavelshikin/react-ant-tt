@@ -10,6 +10,13 @@
   color: $primary;
   float: right;
   margin: 0 10px 8px 0;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.ant-checkbox-inner{
+  width: 20px !important;
+  height: 20px !important;
 }
 
 .note {
@@ -34,7 +41,7 @@
 
     .deleteBtn {
       color: $red;
-      font-size: 14;
+      font-size: 16px;
       cursor: pointer;
 
       &:hover {
