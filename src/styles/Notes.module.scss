@@ -14,7 +14,7 @@
   font-weight: 500;
 }
 
-.ant-checkbox-inner{
+.ant-checkbox-inner {
   width: 20px !important;
   height: 20px !important;
 }
@@ -31,7 +31,7 @@
 
     .title {
       color: $secondary;
-      font-size: 1.2em;
+      font-size: 1.3em;
       font-weight: 500;
 
       @include sm-block() {
@@ -51,7 +51,8 @@
   }
 
   .content {
-    margin-top: 8px;
+    margin-top: 5px;
+    font-size: 1.2em;
   }
 }
 
@@ -65,10 +66,8 @@
     background: $bgMain;
     border: none;
     padding: 0;
-
-    .ant-collapse-header {
-      color: $primary;
-    }
+    font-size: 1.2em;
+    font-weight: 500;
   }
 
   .noteForm {
@@ -82,6 +81,7 @@
   color: $primary !important;
   display: flex;
   align-items: center;
+  padding: 5px 8px !important;
 }
 
 .ant-collapse-content {
@@ -89,6 +89,6 @@
 }
 
 .ant-collapse-content-box {
-  padding: 0 16px 16px;
+  padding: 0 10x 16px;
   background: #4d1f77;
 }

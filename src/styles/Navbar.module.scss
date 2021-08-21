@@ -20,8 +20,12 @@
   }
 
   .rightBox {
+    span {
+      font-size: 16px;
+    }
     .btnExit {
       color: $red;
+      font-size: 20px;
     }
   }
 }

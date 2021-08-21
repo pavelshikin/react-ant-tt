@@ -39,7 +39,7 @@ const NoteForm = ({ catId, catName }) => {
         expandIcon={({ isActive }) => (
           <PlusCircleOutlined
             rotate={isActive ? 90 : 0}
-            style={{ fontSize: 18 }}
+            style={{ fontSize: 20 }}
           />
         )}
       >
@@ -60,7 +60,6 @@ const NoteForm = ({ catId, catName }) => {
                 style={{ margin: '10px 0 10px', borderRadius: 5, padding: 10 }}
               />
             )}
-
             <div className={'error'}>{error}</div>
             <Btn
               type="primary"
