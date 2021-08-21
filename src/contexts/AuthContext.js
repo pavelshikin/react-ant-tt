@@ -54,14 +54,7 @@ const AuthProvider = ({ children }) => {
     console.log(document.Cookie);
 
     try {
-      const res = await api.post(
-        'users/me',
-        {},
-        {
-          withCredentials: true,
-          credentials: 'include'
-        }
-      );
+      const res = await api.post('users/me');
       setUser(res.data);
     } catch (e) {
       removeUserAndTokens();
