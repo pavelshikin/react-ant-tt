@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const api = axios.create({
-  baseURL: 'https://techno-train.herokuapp.com/',
+  baseURL: 'http://185.185.69.233',
   withCredentials: true,
   credentials: 'include',
   headers: {
@@ -19,7 +19,7 @@ api.interceptors.request.use(
 
     config.headers.common['Authorization'] = auth;
     config.headers.common['Refresh'] = refresh;
-    
+
     return config;
   },
   error => Promise.reject(error)
