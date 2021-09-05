@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const api = axios.create({
-  baseURL: 'http://185.185.69.233',
+  baseURL: 'https://185.185.69.233',
   withCredentials: true,
   credentials: 'include',
   headers: {
