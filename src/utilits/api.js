@@ -2,7 +2,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 
 const api = axios.create({
-  baseURL: 'https://techno-train.herokuapp.com/',
+  baseURL: 'https://shikin-links.tk/api/',
   withCredentials: true,
   credentials: 'include',
   headers: {
