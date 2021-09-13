@@ -35,7 +35,7 @@ const NoteList = ({ notes, allPosts, checkBox, checkDefault }) => {
     return posts.map((post, idx) => <NoteItem key={idx} note={post} />);
   };
 
-  if (notes.length === 0) {
+  if (notes.length === 0 && allPosts.length === 0) {
     return (
       <div className={s.content}>
         {renderCheck()}

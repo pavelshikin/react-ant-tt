@@ -10,15 +10,15 @@ const ProductsPage = () => {
   const { user } = useAuth();
   const posts = useSelector(state => state.posts.posts);
   const allPosts = useSelector(state => state.posts.postsByCategory);
-  let products = postsByCategory(posts, 'products');
   const dispatch = useDispatch();
+  let products = postsByCategory(posts, 'products');
 
   useEffect(() => {
     if (user && user.roles.indexOf('OWNER' || 'ADMIN') !== -1) {
       dispatch(fetchPostsByCategory('60d788aee61f64154ce18551'));
     }
     dispatch(fetchPosts());
-  }, [dispatch]);
+  }, [dispatch, user]);
 
   return (
     <div className="container">

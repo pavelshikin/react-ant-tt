@@ -23,7 +23,12 @@ const NotesPage = () => {
   return (
     <div className="container">
       <NoteForm catId={'60d732d173ec823842af9ad2'} catName={'notes'} />
-      <NoteList notes={notes} allPosts={allPosts} checkBox={true} />
+      <NoteList
+        notes={notes}
+        allPosts={allPosts}
+        checkBox={true}
+        checkDefault={false}
+      />
     </div>
   );
 };
